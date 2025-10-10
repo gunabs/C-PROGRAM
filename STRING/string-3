@@ -1,0 +1,38 @@
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[] = "paper", t[] = "title";
+
+    int slen = strlen(s);
+    int tlen = strlen(t);
+
+    if (slen != tlen) {
+        printf("Not isomorphic\n");
+        return 0;
+    }
+
+    int mapS[256]={0};  
+    int mapT[256]={0}; 
+    
+int isIsomorphic=1;
+   
+    for (int i = 0; i < slen; i++) {
+       
+        if (mapS[s[i]] !=mapT[t[i]] ) {
+            isIsomorphic = 0;
+            break;
+        }
+        mapS[s[i]]+=1;
+        mapT[t[i]]+=1;
+    }
+
+    if (isIsomorphic)
+        printf("Is isomorphic\n");
+    else
+        printf("Not isomorphic\n");
+
+    return 0;
+}
+
