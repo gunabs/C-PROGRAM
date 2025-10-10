@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char s[] = "rotation", goal[] = "tionrota";
+   char temp[100];
+   strcpy(temp,s);
+   strcat(temp,s);
+   
+   
+   if(strstr(temp,goal)!=NULL)
+   {
+       printf("its rotaion string");
+   }
+   else
+   {
+       printf("its not a rotated string");
+   }
+   
+
+    return 0;
+}
