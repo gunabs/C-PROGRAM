@@ -1,0 +1,58 @@
+
+#include <stdio.h>
+
+int itspalindrome(char str[],int * len)
+{
+    
+  
+   int j=0;
+   while(j<*len)
+   {
+       if(str[j]==str[*len])
+       {
+           j++;
+           *len--;
+       }
+       else
+       {
+           return 0;
+       }
+   }
+   return 1;
+}
+
+int main() {
+    
+   
+   char str[100];
+   
+   printf("enter a string ;");
+  if(fgets(str,sizeof(str),stdin)==NULL)
+  {
+      printf("invalit error");
+  }
+  
+  int i=0;
+  for(i=0;i<'\0';i++);
+  
+  int len=i-1;
+   
+   
+   
+   if(itspalindrome(str,&len))
+   {
+       printf("yes its palindrome");
+   }
+   else
+   {
+       printf("its not a palindrome");
+   }
+   
+   
+   
+   
+   
+   
+
+    return 0;
+}
