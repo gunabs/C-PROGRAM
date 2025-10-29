@@ -1,0 +1,54 @@
+
+#include <stdio.h>
+#include <string.h>
+int itsanagram(char *a,char *b)
+{
+    
+    int m=strlen(a);
+    
+    int n=strlen(b);
+    
+    if(m!=n)
+    {
+        return 0;
+    }
+    
+    int c[255]={0};
+    
+    for(int i=0;i<m;i++)
+    {
+        
+        c[a[i]]+=1;
+        
+    }
+    
+     for(int i=0;i<n;i++)
+    {
+       if(c[b[i]]!=1)
+       {
+           return 0;
+       }
+        
+    }
+    
+    return 1;
+    
+}
+
+
+int main() {
+   
+   
+     char a[]="ckt";
+     char b[]="act";
+     
+     if(itsanagram(a,b))
+     {
+         printf("its anagram");
+     }
+     else
+     {
+         printf("its not anagram");
+     }
+    return 0;
+}
