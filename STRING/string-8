@@ -1,0 +1,41 @@
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    
+    char a[7]={'I','V','X','L','C','D','M'};
+    
+    int pair[255]={0};
+    
+    pair[a[0]]+=1;
+    pair[a[1]]+=5;
+    pair[a[2]]+=10;
+    pair[a[3]]+=50;
+    pair[a[4]]+=100;
+    pair[a[5]]+=500;
+    pair[a[6]]+=1000;
+    
+    char s []= "MCMXCIV";
+    int sum=0;
+    int n=strlen(s);
+    for(int i=0;i<n;i++)
+    {
+        if(pair[s[i]]<pair[s[i+1]])
+        {
+            
+            sum+=pair[s[i+1]]-pair[s[i]];
+            i++;
+        }
+        else
+        {
+            sum+=pair[s[i]];
+        }
+        
+    }
+    
+    printf("%d ",sum);
+    
+    
+    return 0;
+}
