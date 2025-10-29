@@ -1,0 +1,26 @@
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    
+    char s[]="1337c0d3";
+    int n=strlen(s);
+    
+    int num=0;
+    for(int i=0;i<n;i++)
+    {
+        num=s[i]-'0';
+        
+        if(num>=0&&num<=9)
+        {
+            printf("%d",num);
+        }
+        else
+        {
+            break;
+        }
+    }
+    
+    return 0;
+}
