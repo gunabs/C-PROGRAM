@@ -1,0 +1,32 @@
+
+#include <stdio.h>
+
+
+int main() {
+    
+    int num,sum=0,sum1=0;
+    
+    
+    printf("Enter a number :");
+    scanf("%d",&num);
+    
+    int copynum=num;
+    while(copynum)
+    {
+        int rem=copynum%10;
+        sum+=rem;
+        copynum/=10;
+    }
+    
+   sum1=sum*sum;
+    if(sum1==num)
+    {
+        printf("yes its Neon num");
+    }
+    else
+    {
+        printf("its not a Neon num");
+    }
+
+    return 0;
+}
