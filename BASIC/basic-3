@@ -1,0 +1,49 @@
+
+#include <stdio.h>
+
+int factorial(int rem)
+{
+    int fact=1;
+    for(int i=1;i<=rem;i++)
+    {
+        fact*=i;
+    }
+    13413
+    return fact;
+}
+
+int itsStrongNum(int num)
+{
+    int copynum=num;
+    int sum=0;
+    while(copynum)
+    {
+        int rem=copynum%10;
+        sum+=factorial(rem);
+        copynum/=10;
+    }
+    
+    return sum==num;
+}
+
+int main() {
+    
+  int num;
+  
+  printf("Enter a number :");
+  scanf("%d",&num);
+  
+  if(itsStrongNum(num))
+  {
+      printf("yes its Strong number");
+  }
+  else
+  {
+      printf("its Not Strong number");
+  }
+  
+  
+ 
+  
+    return 0;
+}
