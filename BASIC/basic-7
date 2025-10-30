@@ -1,0 +1,55 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int finddigit(int num){
+  
+    int count=0;
+    while(num)
+    {
+        count++;
+        num/=10;
+    }
+    return count;
+}
+
+int findvalue(int rem,int digit)
+{
+    int sum=1;
+    for(int i=1;i<=digit;i++)
+    {
+        sum*=rem;
+    }
+    return sum;
+}
+
+int main() {
+    
+    int num,sum1=0,digit;
+    
+    
+    printf("Enter a number :");
+    scanf("%d",&num);
+    
+     digit=finddigit(num);
+  
+    int copynum=num;
+    
+    while(copynum)
+    {
+        int rem=copynum%10;
+         
+        sum1+=findvalue(rem,digit);
+        copynum/=10;
+    }
+   
+    if(sum1==num)
+    {
+        printf("yes its Armstrong num");
+    }
+    else
+    {
+        printf("its not a Armstrong num");
+    }
+
+    return 0;
+}
