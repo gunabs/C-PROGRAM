@@ -1,0 +1,38 @@
+
+#include <stdio.h>
+
+int itsPrimeNum(int num)
+{
+    int div=2;
+    while(div<=num/2)
+    {
+        if(num%div==0)
+        {
+            return 0;
+        }
+        div++;
+    }
+    return 1;
+}
+
+int main() {
+    
+  int num;
+  
+  printf("Enter a number :");
+  scanf("%d",&num);
+  
+  if(itsPrimeNum(num))
+  {
+      printf("yes its Prime number");
+  }
+  else
+  {
+      printf("its Not Prime number");
+  }
+  
+  
+ 
+  
+    return 0;
+}
