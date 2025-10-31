@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+    char str[]="i am guna";
+    char *p=str; int count=1;
+    while(*p){
+        if(*p==' ' && *(p+1)!=' ' && *(p+1)!='\0') count++;
+        p++;
+    }
+    printf("Words: %d",count);
+    return 0;
+}
+
