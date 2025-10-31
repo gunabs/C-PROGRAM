@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+#include <string.h>
+
+
+int main() {
+    char arr[] = "i am guna";
+   
+    char *p = arr;
+    int len = strlen(arr);
+    char copy[len];
+    char *p2=copy;
+    
+    
+    while(*p!='\0')
+    {
+       *p2=*p;
+       p++;
+       p2++;
+       
+    }
+    *p2='\0';
+    
+    printf("%s",copy);
+    
+    
+    return 0;
+}
