@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+    char str[]="banana";
+    char *p=str;
+    while(*p){
+        if(*p=='a') *p='@';
+        p++;
+    }
+    printf("%s",str);
+    return 0;
+}
+
