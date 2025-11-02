@@ -1,0 +1,25 @@
+
+#include <stdio.h>
+
+int main() {
+  
+  int num;
+
+  printf("enter a num :");
+  scanf("%d",&num);
+  
+ 
+   if((num>0)&&(num&(num-1))==0)
+   {
+       printf("the numbers is  2 power");
+   }
+   else
+   {
+        printf("the numbers is not  2 power");
+       
+   }
+     
+  
+  
+    return 0;
+}
