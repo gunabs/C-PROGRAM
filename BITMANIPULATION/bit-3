@@ -1,0 +1,20 @@
+
+#include <stdio.h>
+
+int main() {
+  
+  int num,k;
+
+  printf("enter a num , k:");
+  scanf("%d %d",&num,&k);
+  
+  
+      if(num&(1<<k))
+      {
+          printf("k ith bit is set(1) bit");
+      }
+     
+  
+  
+    return 0;
+}
