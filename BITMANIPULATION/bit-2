@@ -1,0 +1,25 @@
+
+#include <stdio.h>
+
+int main() {
+  
+  int num,count=0;
+  
+  printf("enter a num :");
+  scanf("%d",&num);
+  
+  while(num)
+  {
+      if(num&1)
+      {
+          count++;
+          num=num>>1;
+      }
+      else
+      {
+          num=num>>1;
+      }
+  }
+  printf("%d",count);
+    return 0;
+}
