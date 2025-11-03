@@ -1,0 +1,39 @@
+
+#include <stdio.h>
+int binary_search(int a[],int len,int t)
+{
+    int ans=len;
+  int low =0,high=len-1;
+  
+  while(low<=high)
+  {
+      int mid=(low+high)/2;
+      if(a[mid]>t)
+      {
+          ans=mid;
+          high=mid-1;
+      }
+      else
+      {
+          low=mid+1;
+      }
+  }
+    
+   
+    return ans;
+}
+
+int main() {
+    
+    int a[]={1,2,2,3,5,6,};
+    int target=4;
+    int len=sizeof(a)/sizeof(a[0]);
+    
+    int result=binary_search(a,len,target);
+    
+   
+    printf("%d",result);
+    
+
+    return 0;
+}
