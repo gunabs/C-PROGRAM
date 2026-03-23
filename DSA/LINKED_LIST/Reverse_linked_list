@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+ typedef struct lnode {
+int data ;
+struct lnode*next;
+
+}node;
+
+ node* head=NULL;
+
+ static node*temp;
+void push(int data)
+{
+    
+    node* newnode;
+
+   newnode=(node*)malloc(sizeof(node*));
+   
+   if(head==NULL)
+   {
+       head=temp=newnode;
+       newnode->data=data;
+       newnode->next=NULL;
+   }
+   else
+   {
+      newnode->data=data;
+      newnode->next=NULL;
+      temp->next=newnode;
+      temp=newnode;
+      
+   }
+   
+   
+    
+}
+void reverse(node** head_ref)
+{
+    node* prev=NULL;
+    node* current=*head_ref;
+    node*next=NULL;
+    
+    while(current!=NULL)
+    {
+        next=current->next;
+        current->next=prev;
+        prev=current;
+        current=next;
+    }
+    *head_ref=prev;
+    temp=prev;
+}
+void print(node*move)
+{
+    
+    while(move!=NULL)
+    {
+       printf("%d ",move->data);
+       move=move->next;
+    }
+    
+    
+}
+
+
+int main() {
+  
+   
+  push(10);
+  push(20);
+  push(30);
+  
+  print(head);
+  reverse(&head);
+  print(head);
+   
+   
+
+    return 0;
+}
